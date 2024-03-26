@@ -2,6 +2,8 @@ package model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import model.DTO.ClienteRequestDTO;
+
 import java.util.Date;
 
 @Table(name = "cd_cliente")
@@ -12,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class cd_cliente {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
     private long cod_cliente;
     private String nome_cliente;
     private Date dt_nascimento;
@@ -26,4 +28,18 @@ public class cd_cliente {
     private Date dt_emissao_rg;
     private String nome_mae;
     private String nome_pai;
+    public cd_cliente(ClienteRequestDTO data){
+        this.cod_cliente = data.cod_cliente();
+        this.nome_cliente = data.nome_cliente();
+        this.dt_nascimento = data.dt_nascimento();
+        this.cpf = data.cpf();
+        this.sexo = data.sexo();
+        this.naturalidade = data.naturalidade();
+        this.uf_cliente = data.uf_cliente();
+        this.num_rg = data.num_rg();
+        this.orgao_emissor = data.orgao_emissor();
+        this.uf_emissao_rg = data.uf_emissao_rg();
+        this.nome_mae = data.nome_mae();
+        this.nome_pai = data.nome_pai();
+    }
 }

@@ -2,7 +2,6 @@ package model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.Date;
 
 @Table(name = "cd_dados_bancarios")
 @Entity(name = "cd_dados_bancarios")
@@ -12,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class cd_dados_bancarios_cliente {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
     private long cod_dadosbancarios;
     private int numero_banco;
     private String descricao_banco;
