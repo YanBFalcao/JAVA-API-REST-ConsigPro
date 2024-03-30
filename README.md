@@ -12,3 +12,6 @@ Em 26/03/2024,
 Em 27/03/2024,
 - Ajustado campos dos DTOs (Request, Reponse e Updated)
 - Iniciado Controller para o model "Cliente"
+
+Em 29/03/2024,
+- Criado 1º Endpoint: Get All Clientes
