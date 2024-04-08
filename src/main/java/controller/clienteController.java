@@ -9,10 +9,14 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@RestController
-@RequestMapping("consigpro")
-public class clienteController {
+import model.cd_cliente;
+import model.DTO.ClienteRequestDTO;
+import model.DTO.ClienteResponseDTO;
+import model.DTO.ClienteUpdateDTO;
 
+@RestController
+@RequestMapping("/consigpro")
+public class clienteController {
     @Autowired
     private ClienteRepository clienteRepository; // Instanciando objeto para passar dados para Interfaces
 
@@ -27,7 +31,7 @@ public class clienteController {
             return clienteList;
         }
         catch(Exception e){
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, "\nOcorreu um erro: ", e + "\n");
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, "Ocorreu um erro: ", e);
         }
         return clienteList;
     }
