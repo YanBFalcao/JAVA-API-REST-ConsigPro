@@ -8,5 +8,4 @@ public class ConsultaproApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ConsultaproApplication.class, args);
 	}
-
 }
